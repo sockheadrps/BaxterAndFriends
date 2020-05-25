@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(type="text/javascript", src="scripts.js")
+        link(rel="stylesheet", href="styles.css")
+        link(href="https://fonts.googleapis.com/css2?family=Heebo&display=swap", rel="stylesheet")
+        meta(charset="UTF-8")
+        title Now Playing
+
+    body
+        #container
+            .item#current
+                .song#song song
+                .user#user user
+            .item#next
+                .song#nextUserSong nxt usr song
+                .user#nextUser next user

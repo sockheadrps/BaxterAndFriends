@@ -1,4 +1,5 @@
 import hug
+import falcon
 
 
 def look_for_current_request():
@@ -38,7 +39,6 @@ def look_for_next_request():
         return user, song
 
 
-
 @hug.post("/add_song")
 def add_song(data: hug.types.json):
     print(data)
@@ -64,6 +64,21 @@ def music():
     return {'user': user, 'song': song, 'next_user': next_user, 'next_song': next_song}
 
 
+@hug.get("/client", output=hug.output_format.file)
+def client():
+    return "./Client/client.html"
+
+@hug.get("/client_styles.css", output=hug.output_format.file)
+def client_styles():
+    return "./Client/styles.css"
+
+@hug.get("/client_scripts.js", output=hug.output_format.file)
+def client_scripts():
+    return "./Client/scripts.js"
+
+@hug.get("/favicon.ico")
+def favicon():
+    raise falcon.HTTPForbidden("fuck you")
 
 @hug.get("/music_thing", output=hug.output_format.file)
 def music_thing():
@@ -76,3 +91,7 @@ def music_thing_css():
 @hug.get("/scripts.js", output=hug.output_format.file)
 def music_thing_js():
     return "./scripts.js"
+
+#
+# receive_client_slider_data()
+

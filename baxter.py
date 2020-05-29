@@ -1,5 +1,6 @@
 import speech_recognition as sr
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -39,7 +40,9 @@ chrome_options.add_argument("chrome://flags/#enable-media-session-service")
 # If launched from GUI, baxterRunning will == True
 print(jsonifySettings.readSpecificSetting('settings.json', 'baxterRunning'))
 if jsonifySettings.readSpecificSetting('settings.json', 'baxterRunning') == 1:
-    driver = webdriver.Chrome(options=chrome_options)
+    # driver = webdriver.Chrome(options=chrome_options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+
     try:
         driver.switch_to.window(driver.window_handles[1])
         driver.close()
@@ -53,14 +56,6 @@ def click_play_button():
     print('Pausing/Resuming... ')
     keyboard.press(KeyCode.from_vk(0xB3))  # Play/Pause
 
-def set_volume(volume):
-    driver.execute_script(f'''var videoElement = document.querySelector("video")
-var audioCtx = new AudioContext()
-var source = audioCtx.createMediaElementSource(videoElement)
-var gainNode = audioCtx.createGain()
-gainNode.gain.value = {volume}
-source.connect(gainNode)
-gainNode.connect(audioCtx.destination)''')
 
 class youtube():
     global killYoutube, driver

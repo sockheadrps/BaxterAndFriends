@@ -4,7 +4,6 @@ import playsound
 import os
 import jsonifySettings
 import datetime as dt
-import timer
 import threading
 import pickle
 
@@ -34,15 +33,6 @@ CHANNEL = jsonifySettings.readSpecificSetting('settings.json', 'twitchUser')
 OWNER = jsonifySettings.readSpecificSetting('settings.json', 'twitchUser')
 irc = socket.socket()
 irc.connect((SERVER, PORT))
-
-# SERVER = "irc.twitch.tv"
-# PORT = 6667
-# PASS = jsonifySettings.readSpecificSetting('settings.json', 'oAuth')
-# BOT ="TwitchBot"
-# CHANNEL = "sockheadrps"
-# OWNER = "sockheadrps"
-# irc = socket.socket()
-# irc.connect((SERVER, PORT))
 
 
 irc.send((  f'PASS {PASS}\n'

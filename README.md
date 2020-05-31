@@ -1,19 +1,19 @@
 # BaxterAndFriends
-Python Version 3.7.1
-A series of tools for steaming on Twitch.tv
+Python Version 3.7.1  
+A series of tools for steaming on Twitch.tv  
 
-Current Features:
-  Web interface
-    -A web page with a series of inputs (buttons and sliders) to adjust settings.
-      Buttons
-        -TTS On/Off
-        -Stream Sound clips On/Off
-        -Auto Play Song Requests On/Off
-        -Start/Stop Baxter
-        -Connect/Disconnect from Twitch Chat
-       Sliders
-        -Cooldown adjustment for stream sounds
-        -TTS max characters to read from Twitch chat       
+Current Features:  
+  Web interface  
+    -A web page with a series of inputs (buttons and sliders) to adjust settings.  
+      Buttons  
+        -TTS On/Off  
+        -Stream Sound clips On/Off  
+        -Auto Play Song Requests On/Off  
+        -Start/Stop Baxter  
+        -Connect/Disconnect from Twitch Chat  
+       Sliders  
+        -Cooldown adjustment for stream sounds  
+        -TTS max characters to read from Twitch chat         
         
   Voice Recognition
     -"Baxter Play Requests"
